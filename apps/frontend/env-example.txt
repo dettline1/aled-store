@@ -1,0 +1,9 @@
+# Скопируйте этот файл как .env.local в папке apps/frontend/
+
+# API Configuration
+NEXT_PUBLIC_API_URL=http://localhost:4000/api/v1
+NEXT_PUBLIC_USE_API=true
+
+# Если API не запущен, установите false для использования локальных данных
+# NEXT_PUBLIC_USE_API=false
+

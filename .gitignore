@@ -1,0 +1,11 @@
+﻿node_modules/
+.next/
+dist/
+.env
+.env.local
+*.log
+.DS_Store
+apps/admin/node_modules/
+apps/frontend/node_modules/
+demo-api/node_modules/
+*.zip

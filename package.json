@@ -1,0 +1,41 @@
+{
+  "name": "aled-monorepo",
+  "version": "1.0.0",
+  "private": true,
+  "description": "ALed интернет-магазин светодиодной продукции - полнофункциональный монорепозиторий",
+  "scripts": {
+    "dev": "concurrently \"pnpm --filter api dev\" \"pnpm --filter admin dev\"",
+    "dev:all": "concurrently \"pnpm --filter api dev\" \"pnpm --filter admin dev\" \"pnpm --filter frontend dev\"",
+    "dev:api": "pnpm --filter api dev",
+    "dev:admin": "pnpm --filter admin dev",
+    "dev:frontend": "pnpm --filter frontend dev",
+    "build": "pnpm --filter shared build && pnpm --filter api build && pnpm --filter admin build && pnpm --filter frontend build",
+    "build:api": "pnpm --filter shared build && pnpm --filter api build",
+    "build:admin": "pnpm --filter shared build && pnpm --filter admin build",
+    "build:frontend": "pnpm --filter shared build && pnpm --filter frontend build",
+    "lint": "pnpm --filter \"*\" lint",
+    "lint:fix": "pnpm --filter \"*\" lint:fix",
+    "test": "pnpm --filter \"*\" test",
+    "type-check": "pnpm --filter \"*\" type-check",
+    "db:migrate": "pnpm --filter api db:migrate",
+    "db:seed": "pnpm --filter api db:seed",
+    "db:studio": "pnpm --filter api db:studio",
+    "docker:up": "docker-compose -f infra/docker/docker-compose.yml up -d",
+    "docker:down": "docker-compose -f infra/docker/docker-compose.yml down",
+    "docker:logs": "docker-compose -f infra/docker/docker-compose.yml logs -f",
+    "setup": "pnpm install && pnpm docker:up && sleep 5 && pnpm db:migrate && pnpm db:seed"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "concurrently": "^8.2.2",
+    "typescript": "^5.0.0"
+  },
+  "engines": {
+    "node": ">=20.0.0",
+    "pnpm": ">=8.0.0"
+  },
+  "packageManager": "pnpm@8.15.0",
+  "dependencies": {
+    "axios": "^1.12.2"
+  }
+}
