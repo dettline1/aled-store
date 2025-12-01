@@ -42,13 +42,57 @@ const orders = [
 let banners = [
   {
     id: '1',
-    title: 'Новинка! Би-LED линзы',
-    subtitle: 'Яркий свет для вашего автомобиля',
+    title: 'ALED PRIME F30',
+    subtitle: 'Трехчиповые модули ближнего и дальнего света. 3 чипа | 5500K | 13к lux (3 метра) | 55/60W. Один отражатель ближнего и два дальнего света. Led чип Osram на ближнем и дальнем свете. Гарантия 2 года на работоспособность',
     image: '',
     link: '/catalog/bi-led-lenses',
-    buttonText: 'Смотреть каталог',
+    buttonText: 'Подробнее',
     isActive: true,
     order: 1,
+    createdAt: new Date().toISOString()
+  },
+  {
+    id: '2',
+    title: 'Установка светодиодных BILED линз',
+    subtitle: 'От 21.000 рублей под ключ. Работаем с 2016 года. Гарантия 2 года. Более 10 видов светодиодных модулей на выбор',
+    image: '',
+    link: '/catalog/bi-led-lenses',
+    buttonText: 'Узнать больше',
+    isActive: true,
+    order: 2,
+    createdAt: new Date().toISOString()
+  },
+  {
+    id: '3',
+    title: 'Товары для установки и ремонта фар',
+    subtitle: 'Герметик и клей, переходные рамки и бленды, проводка и переходники, обманки, декодеры',
+    image: '',
+    link: '/catalog',
+    buttonText: 'Смотреть каталог',
+    isActive: true,
+    order: 3,
+    createdAt: new Date().toISOString()
+  },
+  {
+    id: '4',
+    title: 'Новые стекла фар',
+    subtitle: 'В наличии более 300 моделей. Замена стекол после ДТП, замена помутневших стекол, восстановление внешнего вида, замена разбитой оптики. Высокое качество поликарбоната, покрыты УФ лаком',
+    image: '',
+    link: '/catalog',
+    buttonText: 'Выбрать стекло',
+    isActive: true,
+    order: 4,
+    createdAt: new Date().toISOString()
+  },
+  {
+    id: '5',
+    title: 'Дополнительные элементы освещения',
+    subtitle: 'Светодиодные лампы, мини линзы, светодиодные ПТФ',
+    image: '',
+    link: '/catalog',
+    buttonText: 'Смотреть каталог',
+    isActive: true,
+    order: 5,
     createdAt: new Date().toISOString()
   }
 ];
@@ -56,7 +100,7 @@ let banners = [
 // Счетчики для ID
 let productIdCounter = 1;
 let categoryIdCounter = 5;
-let bannerIdCounter = 2;
+let bannerIdCounter = 6;
 
 // Routes
 app.get('/', (req, res) => {
@@ -357,6 +401,22 @@ app.post('/api/v1/auth/login', (req, res) => {
           lastName: 'ALed'
         },
         accessToken: 'demo-jwt-token-12345'
+      }
+    });
+  }
+  
+  // Новый пользователь
+  if (email === 'uvarovpaveliii@gmail.com' && password === 'jhkj281sq-sdgfwv') {
+    return res.json({
+      data: {
+        user: {
+          id: '2',
+          email: 'uvarovpaveliii@gmail.com',
+          role: 'SUPER_ADMIN',
+          firstName: 'Павел',
+          lastName: 'Уваров'
+        },
+        accessToken: 'demo-jwt-token-67890'
       }
     });
   }

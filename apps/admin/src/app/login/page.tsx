@@ -148,29 +148,6 @@ export default function LoginPage() {
               )}
             </Button>
           </form>
-          <div className="mt-6 p-4 bg-gradient-to-r from-blue-50 to-purple-50 rounded-xl border-2 border-blue-200 shadow-inner">
-            <p className="text-sm text-gray-700 font-semibold text-center mb-3 flex items-center justify-center gap-2">
-              <span className="text-lg">🔑</span>
-              <span>Тестовые данные для входа</span>
-            </p>
-            <div className="space-y-2 text-sm">
-              <div className="bg-white p-3 rounded-lg shadow-sm border border-blue-100 hover:shadow-md transition-shadow">
-                <p className="text-gray-500 text-xs mb-1 uppercase tracking-wide">
-                  Email
-                </p>
-                <code className="text-blue-600 font-semibold text-base">admin@aled.local</code>
-              </div>
-              <div className="bg-white p-3 rounded-lg shadow-sm border border-blue-100 hover:shadow-md transition-shadow">
-                <p className="text-gray-500 text-xs mb-1 uppercase tracking-wide">
-                  Пароль
-                </p>
-                <code className="text-blue-600 font-semibold text-base">admin123</code>
-              </div>
-            </div>
-            <div className="mt-3 text-xs text-center text-gray-500 bg-white/50 rounded-lg p-2">
-              💡 Сначала убедитесь, что API запущен!
-            </div>
-          </div>
         </CardContent>
       </Card>
     </div>

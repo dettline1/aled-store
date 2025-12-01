@@ -26,7 +26,8 @@ export function BannerCarousel() {
 
   const fetchBanners = async () => {
     try {
-      const response = await fetch('http://localhost:4000/api/v1/banners');
+      const apiUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:4000/api/v1';
+      const response = await fetch(`${apiUrl}/banners`);
       const data = await response.json();
       setBanners(data.data || []);
     } catch (error) {

@@ -22,8 +22,14 @@ export function Header() {
           <div className="flex items-center justify-between py-3">
             {/* Логотип */}
             <Link href="/" className="flex items-center space-x-3 flex-shrink-0">
-              <div className="w-12 h-12 bg-white rounded-lg flex items-center justify-center shadow-md">
-                <span className="text-yellow-500 font-bold text-2xl">A</span>
+              <div className="w-14 h-14 bg-black rounded-lg flex items-center justify-center shadow-lg overflow-hidden p-2">
+                {/* Стилизованный логотип - желтая полоса */}
+                <svg viewBox="0 0 100 100" className="w-full h-full">
+                  <path 
+                    d="M 20 30 L 50 30 L 60 50 L 80 50 L 60 70 L 30 70 Z" 
+                    fill="#FCD34D"
+                  />
+                </svg>
               </div>
               <div>
                 <h1 className="text-2xl font-bold text-gray-900">ALED</h1>
